@@ -1,0 +1,15 @@
+Explanation of Merge Sorted Array
+
+
+This Go function merges two sorted arrays nums1 and nums2 into nums1. The function takes four arguments: nums1 (the first sorted array), m (the number of elements in nums1), nums2 (the second sorted array), and n (the number of elements in nums2).
+
+Here's a step-by-step explanation of the code:
+
+1. Initialize two pointers i and j pointing to the last elements of nums1 and nums2 respectively.
+2  Start iterating from the end of nums1 (position m+n-1) to the beginning (position 0).
+   At each iteration:
+      i. Check if both i and j are valid indices (i.e., greater than or equal to 0) and if the element at nums1[i] is greater than the element at nums2[j]. If this condition is true, it means that the current element in nums1 is greater, so we copy it to the end of the merged array (nums1[k]) and decrement i.
+      ii. If the condition is not true (i.e., nums1[i] is not greater or i is not a valid index), or if j is still a valid index, it means that nums2 still has elements to be merged. In this case, we copy the element at nums2[j] to the end of the merged array (nums1[k]) and decrement j.
+3. Repeat this process until all elements from both arrays are merged into nums1.
+
+The time complexity of this function is O(m + n), where m and n are the lengths of nums1 and nums2 respectively. This is because we are traversing both arrays once in a single loop. The space complexity is O(1) because we are not using any extra space that scales with the size of the input arrays. We are merging the arrays in place within nums1.
